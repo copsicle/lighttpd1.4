@@ -8,7 +8,6 @@ pipeline {
                 sh './autogen.sh'
                 sh './configure -C'
                 sh 'make check'
-                sh '/usr/bin/sudo make install'
             }
         }
     }
