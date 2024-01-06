@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent docker
+    agent label 'jenkinsagent'
     stages {
         stage('build') {
             steps {
