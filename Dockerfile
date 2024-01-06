@@ -1,6 +1,4 @@
-FROM alpine:latest
-
+FROM jenkins/agent:latest-alpine
+USER root
 RUN apk update && apk add alpine-sdk
-
-RUN useradd jenkins --shell /bin/bash --create-home
 USER jenkins
