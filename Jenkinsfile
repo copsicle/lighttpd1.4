@@ -11,4 +11,9 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            archiveArtifacts 'src/lighttpd'
+        }
+    }
 }
