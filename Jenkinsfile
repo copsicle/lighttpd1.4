@@ -1,11 +1,10 @@
 #!/usr/bin/env groovy
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent { docker { image 'python:bookworm' } }
+    agent { docker { image 'mesonbuild:latest' } }
     stages {
         stage('build') {
             steps {
-                sh 'sudo apt install build-essential'
                 sh 'meson setup --buildtype debugoptimized --prefix /usr/local build'
                 sh 'cd build && meson compile && meson test && meson install'
             }
