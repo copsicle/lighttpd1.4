@@ -1,6 +1,6 @@
-FROM debian:bookworm
+FROM alpine:latest
 
-RUN apt-get update && apt-get install -y build-essential
+RUN apk update && apk add alpine-sdk
 
 RUN useradd jenkins --shell /bin/bash --create-home
 USER jenkins
