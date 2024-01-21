@@ -4,11 +4,7 @@ pipeline {
     agent none
     stages {
         stage('Build') {
-            agent {
-                dockerfile {
-                    dir 'build'
-                }
-            }
+            agent { dockerfile }
             steps {
                 sh './autogen.sh'
                 sh './configure -C'
