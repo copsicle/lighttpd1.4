@@ -7,6 +7,7 @@
 .libs/
 .sconf_temp
 .sconsign.dblite
+.vscode/
 CMakeCache.txt
 CMakeFiles/
 CTestTestfile.cmake
