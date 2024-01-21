@@ -1,10 +1,15 @@
 #!/usr/bin/env groovy
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    node {
-        git 'https://github.com/copsicle/lighttpd1.4'
-        def ubijava = docker.build 'ubi8-jdk:latest'
-        ubijava.inside {
+    agent none
+    stages {
+    stage('Build') {
+        agent {
+            dockerfile {
+                dir 'build'
+            }
+        }
+        steps {
             sh './autogen.sh'
             sh './configure -C'
             sh 'make check'
@@ -15,4 +20,5 @@ pipeline {
             archiveArtifacts 'src/lighttpd'
         }
     }
+}
 }
