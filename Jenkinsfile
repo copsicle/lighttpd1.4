@@ -1,10 +1,9 @@
 #!/usr/bin/env groovy
 // Jenkinsfile (Declarative Pipeline)
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Build') {
-            agent { dockerfile true }
             steps {
                 sh './autogen.sh'
                 sh './configure -C'
